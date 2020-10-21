@@ -19,12 +19,12 @@ namespace SimpleSystem
             InitializeComponent();
 
             /*
-                This dependecies should be remove, this project should only depend on the interfaces in StudentDomain project not on its specific implementation.
-                But for demonstration purposes, this would do the job. Also have a look with IOC Containers, as they're commonly used in this situations.
+                This dependecies should be remove, this project should only depend on the interfaces in other project not on its specific implementation.
+                But for demonstration purposes, I only use one project, but it would be better to have a separate class library for business models/logics and data access.
              */
 
-            this.studentRepository = new DapperSQLServerStudentRepository();
-            //this.studentRepository = new SQLServerStudentRepository();
+            //this.studentRepository = new DapperSQLServerStudentRepository();
+            this.studentRepository = new SQLServerStudentRepository();
             //this.studentRepository = new SQLIteStudentRepository();
         }
 
